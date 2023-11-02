@@ -1,0 +1,117 @@
+/* 
+font-family: 'Jura', sans-serif;
+font-family: 'Russo One', sans-serif;
+font-family: 'Exo', sans-serif;
+*/
+
+
+body {
+    background-color: #313131;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.header {
+    background-color: #CDCDCD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8rem;
+}
+
+.textBox {
+    font-family: 'Jura', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.calculatorBody {
+    background-color: #000210;
+    margin-left: auto;
+    margin-right: auto;
+    height: 44rem;
+    width: 35rem;
+    border-radius: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calcHeader {
+    background-color: #576857;
+    width: 32rem;
+    height: 6rem;
+    margin-top: 2.2rem;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;
+
+}
+
+.calcHeaderText {
+    font-family: 'Jura', sans-serif;
+    margin-left: 2.5rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem; 
+}
+
+.firstRow,.secondRow,.thirdRow,.fourthRow {
+    display: flex;
+    gap: 1.3rem;
+}
+
+
+.button {
+    background-color: #AEAEAE;
+    height: 6rem;
+    width: 5rem;
+    font-size: 3rem;
+}
+
+.DELB {
+    background-color: #D7CE00;
+    height: 6rem;
+    width: 5rem;
+    font-size: 2rem;
+}
+
+.ACB {
+    background-color: #A70000;
+    height: 6rem;
+    width: 5rem;
+    font-size: 2rem;
+}
+
+.equalB {
+    background-color: #29CD00;
+    height: 6rem;
+    width: 17.5rem;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.button,.DELB,.ACB,.equalB {
+    border: none;
+    border-radius: 1rem;
+    font-family: 'Exo', sans-serif;
+    font-weight: bold;
+}
+
+
+.button:hover,.DELB:hover,.ACB:hover,.equalB:hover {
+    box-shadow: 0 0 15px 1px black inset;
+}
