@@ -48,17 +48,27 @@ body {
     border-radius: 10rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
 }
 
-.calcHeaderText {
+.calcTextCurrent {
     font-family: 'Jura', sans-serif;
     margin-left: 2.5rem;
     color: rgba(0, 0, 0, 0.7);
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
+    margin-bottom: 2.5rem;
 }
 
+.calcTextResult {
+    font-family: 'Jura', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 3.8rem;
+    margin-top: 2.5rem;
+}
 
 
 .buttonContainer {
@@ -109,9 +119,34 @@ body {
     border-radius: 1rem;
     font-family: 'Exo', sans-serif;
     font-weight: bold;
+    transition: 0.15s ease-in-out;
 }
 
 
-.button:hover,.DELB:hover,.ACB:hover,.equalB:hover {
-    box-shadow: 0 0 15px 1px black inset;
+.button:hover {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    animation: shaking 0.4s;
 }
+
+.DELB:hover {
+    background-color: #D7CE00;
+    animation: shaking 0.4s;
+   
+}
+
+.ACB:hover {
+    animation: shaking 0.4s;
+}
+
+.equalB:hover {
+    animation: shaking 0.4s;
+}
+
+@keyframes shaking {
+    0% {transform: translateX(0) rotate(0deg);}
+    25% {transform: translateX(5px) rotate(3deg);}
+    50% {transform: translateX(0px) rotate(0deg);}
+    75% {transform: translateX(-5px) rotate(-3deg);}
+    100% {transform: translateX(0px) rotate(0deg);}
+ }

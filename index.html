@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
     <script src="calc.js" defer></script>
 </head>
 
@@ -21,35 +22,36 @@
 
     <div class="calculatorBody">
         <div class="calcHeader">
-            <div class="calcHeaderText">14 + 2</div>
+            <div class="calcTextCurrent"></div>
+            <div class="calcTextResult">0</div>
         </div>
 
         <div class="buttonContainer">
             <div class="firstRow">
-                <button class="button">7</button>
-                <button class="button">8</button>
-                <button class="button">9</button>
-                <button class="DELB">DEL</button>
-                <button class="ACB">AC</button>
+                <button class="button nclick seven">7</button>
+                <button class="button nclick eight">8</button>
+                <button class="button nclick nine">9</button>
+                <button class="DELB sclick">DEL</button>
+                <button class="ACB sclick">AC</button>
             </div>
             <div class="secondRow">
-                <button class="button">4</button>
-                <button class="button">5</button>
-                <button class="button">6</button>
-                <button class="multiplyB button">x</button>
-                <button class="divideB button">/</button>
+                <button class="button nclick four">4</button>
+                <button class="button nclick five">5</button>
+                <button class="button nclick six">6</button>
+                <button class="multiplyB button nclick">x</button>
+                <button class="divideB button nclick">/</button>
             </div>
             <div class="thirdRow">
-                <button class="button">1</button>
-                <button class="button">2</button>
-                <button class="button">3</button>
-                <button class="addB button">+</button>
-                <button class="subtractB button">-</button>
+                <button class="button nclick one">1</button>
+                <button class="button nclick two">2</button>
+                <button class="button nclick three">3</button>
+                <button class="addB button nclick">+</button>
+                <button class="subtractB button nclick">-</button>
             </div>
             <div class="fourthRow">
-                <button class="button">0</button>
-                <button class="pointB button">.</button>
-                <button class="equalB">=</button>
+                <button class="button nclick zero">0</button>
+                <button class="pointB button nclick">.</button>
+                <button class="equalB sclick">=</button>
             </div>
         </div>
 
