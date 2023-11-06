@@ -147,12 +147,7 @@ function zeroCheckAddNum(num) {
         displayValue += num;
         currentDisplay.textContent = displayValue;
     }
-
-
 }
-
-
-
 
 
 zeroB.addEventListener('click', () => {
@@ -310,7 +305,7 @@ equalB.addEventListener('click', () => {
                     let roundedValue = Math.round((storeValue + Number.EPSILON) * 100) / 100
                     let ptext = roundedValue.toString();
                     resultDisplay.textContent = ptext;
-                    currentDisplay.textContent = ptext;
+                    currentDisplay.textContent = '0';
                     displayValue = '';
                 }
             }
