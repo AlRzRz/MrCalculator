@@ -90,12 +90,17 @@ let delB = document.querySelector('.DELB');
 let ACB = document.querySelector('.ACB');
 
 function mathSignInStringCheck(string) {
-    for (let letter of string) {
-        if (mathSigns.includes(letter)) {
-            return true;
+    let pholder = displayValue.split(' ');
+    let secondSpot = pholder[1];
+    
+    if (secondSpot) {
+        for (let letter of string) {
+            if (mathSigns.includes(letter)) {
+                return true;
+            }
         }
     }
-
+    
     return false;
 }
 
@@ -110,12 +115,18 @@ function numberInStringCheck(string) {
 
 function specialSignFunction (leftDisplay, rightDisplay, sign) {
     let placeholder = displayValue.split(' ');
-    let storeValue = operate(+placeholder[0], placeholder[1], +placeholder[2]);
-    let roundedValue = Math.round((storeValue + Number.EPSILON) * 100) / 100;
-    let ptext = roundedValue.toString();
-    rightDisplay.textContent = ptext
-    displayValue = ptext + ` ${sign} `;
-    leftDisplay.textContent = displayValue;
+    if (placeholder[1] === '/' && +placeholder[2] === 0) {
+        rightDisplay.textContent = placeholder[0]
+        displayValue = placeholder[0] + ` ${sign} `;
+        leftDisplay.textContent = displayValue;
+    } else {
+        let storeValue = operate(+placeholder[0], placeholder[1], +placeholder[2]);
+        let roundedValue = Math.round((storeValue + Number.EPSILON) * 100) / 100;
+        let ptext = roundedValue.toString();
+        rightDisplay.textContent = ptext
+        displayValue = ptext + ` ${sign} `;
+        leftDisplay.textContent = displayValue;
+    }
 }
 
 function zeroCheckAddNum(num) {
@@ -225,17 +236,33 @@ addB.addEventListener('click', () => {
 })
 
 subtractB.addEventListener('click', () => {
-    if (numberInStringCheck(displayValue)) {
-        if (mathSignInStringCheck(displayValue)) {
-            let pholder = displayValue.split(' ');
-            if (pholder[2]) {
-                specialSignFunction(currentDisplay, resultDisplay, '-');
+    if (displayValue === '') {
+        displayValue = '-';
+        currentDisplay.textContent = displayValue;
+    }
+
+    let placeholder1 = displayValue.split(' ');
+    
+    if (placeholder1[2] === '') {
+        displayValue += '-';
+        currentDisplay.textContent = displayValue;
+    } else {
+        if (numberInStringCheck(displayValue)) {
+            if (placeholder1[2] === '-') {
+                return;
             }
-        } else {
-            displayValue += ' - '
-            currentDisplay.textContent = displayValue;
+            if (mathSignInStringCheck(displayValue)) {
+                let pholder = displayValue.split(' ');
+                if (pholder[2]) {
+                    specialSignFunction(currentDisplay, resultDisplay, '-');
+                }
+            } else {
+                displayValue += ' - '
+                currentDisplay.textContent = displayValue;
+            }
         }
     }
+
 })
 
 multiplyB.addEventListener('click', () => {
@@ -274,13 +301,18 @@ equalB.addEventListener('click', () => {
         if (mathSignInStringCheck(displayValue)) {
             let placeholder = displayValue.split(' ');
             if (placeholder[2]) {
-                let storeValue = operate(+placeholder[0], placeholder[1], +placeholder[2]);
-                let roundedValue = Math.round((storeValue + Number.EPSILON) * 100) / 100
-                let ptext = roundedValue.toString();
-                resultDisplay.textContent = ptext
-                displayValue = ptext;
-                currentDisplay.textContent = displayValue;
-                displayValue = '';
+                if (placeholder[1] === '/' && +placeholder[2] === 0) {
+                    resultDisplay.textContent = placeholder[0];
+                    currentDisplay.textContent = placeholder[0];
+                    displayValue = '';
+                } else {
+                    let storeValue = operate(+placeholder[0], placeholder[1], +placeholder[2]);
+                    let roundedValue = Math.round((storeValue + Number.EPSILON) * 100) / 100
+                    let ptext = roundedValue.toString();
+                    resultDisplay.textContent = ptext;
+                    currentDisplay.textContent = ptext;
+                    displayValue = '';
+                }
             }
         }
     }
@@ -299,8 +331,10 @@ delB.addEventListener('click', () => {
 })
 
 ACB.addEventListener('click', () => {
-    displayValue = '';
+    displayValue = '0';
     currentDisplay.textContent = displayValue;
     resultDisplay.textContent = '0';
 })
 //
+// Length of Displays
+

@@ -47,18 +47,19 @@ body {
     margin-top: 2.2rem;
     border-radius: 10rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: space-around;
 }
 
 .calcTextCurrent {
     font-family: 'Jura', sans-serif;
-    margin-left: 2.5rem;
     color: rgba(0, 0, 0, 0.7);
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
-    margin-bottom: 2.5rem;
+    width: 26rem;
+    text-align: left;
+
 }
 
 .calcTextResult {
@@ -66,8 +67,8 @@ body {
     color: rgba(0, 0, 0, 0.7);
     font-size: 2rem;
     font-weight: bold;
-    margin-right: 3.8rem;
-    margin-top: 2.5rem;
+    text-align: right;
+    width: 26rem;
 }
 
 
